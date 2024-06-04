@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button{
+            display: flex;
+            margin-left: 5%;
+        }
+        button{
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 25%;
+            border: 1px solid darkgreen;
+            background: darkgreen;
+            margin-left: 5%;
+            height: 45px;
+            border-radius: 50px;
+            color: white;
+            width: 100%;
+        }
+        button a{
+            text-decoration: none;
+            color: white;
+        }
+        button:hover{
+            border: 1px solid pink;
+            background: pink;
+        }
+        body {
+            background-color: pink;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        input, button {
+            padding: 10px 20px;
+            margin: 10px 5px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            font-size: 1.2em;
+        }
+
+        input {
+            width: 250px;
+        }
+
+        button {
+            width: 20%;
+            background-color: #49a0f1;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #130fe4;
+            transform: translateY(-2px);
+        }
+        #table h3 {
+            color: black;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+    </style>
+</head>
+<body>
+
+<h2>Tables</h2>
+
+<input type="text" id="number" placeholder="Number">
+<button onclick="Table()">Table</button>
+
+<div id="table"></div>
+<script>
+    function Table() {
+        const num = document.getElementById('number').value;
+        const tableDiv = document.getElementById('table');
+        
+        tableDiv.innerHTML = '';
+
+        if (num) {
+            const table = document.createElement('div');
+            table.innerHTML = `<h3>Table of ${num}</h3>`;
+            for (let i = 1; i <= 10; i++) {
+                const row = document.createElement('div');
+                row.textContent = `${num} x ${i} = ${num * i}`;
+                table.appendChild(row);
+            }
+            tableDiv.appendChild(table);
+        } else {
+            alert('Please enter a number');
+        }
+    }
+    alert("Welcome to my bakery. What do you want to order?");
+</script>
+</html>
